@@ -1,0 +1,104 @@
+@import "_null";
+
+body {
+  div {
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+.wrapper {
+  height: 100vh;
+  background: #32cac3;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  text-align: center;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 68px;
+  color: #000000;
+  margin-bottom: 34px;
+}
+
+.block {
+  // display: grid;
+  background: #fbfbfb;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.input {
+  padding: 0 16px;
+  background: #ffffff;
+  border: 1px solid #e5e9eb;
+  border-radius: 6px;
+  width: 320px;
+  height: 40px;
+  box-shadow: 0 0 3px black;
+}
+
+.add {
+  width: 60px;
+  height: 40px;
+  background: #4094f7;
+  border-radius: 6px;
+  color: white;
+}
+
+.todosList {
+  margin-bottom: 11px;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 24px;
+  width: 392px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 3px black;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.todo_input {
+  flex-grow: 1;
+}
+
+.edit {
+}
+
+.delete {
+}
+
+.bx-trash {
+}
+
+.clear {
+  cursor: pointer;
+  // justify-self: center;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.006em;
+  color: #0e73f6;
+  width: max-content;
+  margin: 0 auto;
+}
