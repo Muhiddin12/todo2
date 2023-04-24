@@ -1,0 +1,43 @@
+:root {
+  --primery-color: #f8e5e5;
+  --secondary-color: #212121;
+
+  // switcher
+  // --skin-color: #af38eb;
+  // --skin-color: #ec9412;
+  // --skin-color: #1fc586;
+  // --skin-color: #2eb1ed;
+  // --skin-color: #ce1616;
+}
+
+.dark-theme {
+  --primery-color: #212121;
+  --secondary-color: #fff;
+}
+
+// .iconMoon {
+//   transform: scale(0);
+//   width: 250vw;
+//   height: 25vw;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   right: 0;
+//   background: #a4c0d3;
+//   transition: 1000ms ease-in-out;
+//   border-radius: 50%;
+//   display: flex;
+//   flex: 0 0 auto;
+// }
+
+// .iconMoon:active {
+//   transform: scale(1);
+//   transition: 1000ms ease-in-out;
+// }
+
+.iconMoon img{
+  width: 24px;
+  cursor: pointer;
+}
+
+

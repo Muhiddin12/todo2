@@ -6,11 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="./css/style.css">
+
+      <!-- switcher Colors -->
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-1" 
+  href="./css/color-1.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-2" 
+  href="./css/color-2.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-3" 
+  href="./css/color-3.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-4" 
+  href="./css/color-4.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-5" 
+  href="./css/color-5.css" >
+  
   <title>todoApp</title>
 </head>
 <body>
   <div class="wrapper">
-    <div class="container">
+    <div class="animation">
+      <div class="container">
+        <div class="styles">
+
+          <div class="switchColorBox">
+            <div class="style-switcher outer-shadow">
+              <div class="style-switcher-toggler s-icon outer-shadow hover-in-shadow">
+                <img src="./img/chromatic.png" alt="img">
+              </div>
+            </div>
+          </div>
+
+          <p class="animationcheck">Animation</p>
+
+          <div class="iconMoon">
+            <img src="./img/moon.png" alt="img">
+          </div>
+        </div>
+
+        <div class="colors">
+          <div id="color-1new" class="color-1" onclick="setActiveStyle('color-1')"></div>
+          <div id="color-1new" class="color-2" onclick="setActiveStyle('color-2')"></div>
+          <div id="color-1new" class="color-3" onclick="setActiveStyle('color-3')"></div>
+          <div id="color-1new" class="color-4" onclick="setActiveStyle('color-4')"></div>
+          <div id="color-1new" class="color-5" onclick="setActiveStyle('color-5')"></div>
+        </div>
+
         <h1 class="title">To Do list APP</h1>
         <div class="block">
           <form class="form">
@@ -18,12 +57,13 @@
             <button class="add">Add</button>
           </form>
           <ul class="todosList">
-
+  
           </ul>
           <div class="clear">Clear all</div>
         </div>
       </div>
     </div>
+  </div>
 
   <script src="./js/todo.js"></script>
 </body>

@@ -1,4 +1,7 @@
 @import "_null";
+@import "_animation";
+@import "_darkMode";
+@import "_switcher";
 
 body {
   div {
@@ -8,31 +11,48 @@ body {
 
 .wrapper {
   height: 100vh;
-  background: #32cac3;
+  // background: #32cac3;
+  background: var(--primery-color);
 }
 
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  width: 456px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.styles {
+  // margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  // gap: 20px;
 }
 
 .title {
   text-align: center;
   font-family: "Inter";
   font-weight: 700;
-  font-size: 56px;
+  font-size: 46px;
   line-height: 68px;
-  color: #000000;
+  // color: #000000;
+  color: var(--skin-color);
   margin-bottom: 34px;
 }
 
 .block {
   // display: grid;
-  background: #fbfbfb;
+  // background: #fbfbfb;
+  background: var(--skin-color);
   border-radius: 12px;
-  padding: 32px;
+  padding: 18px;
 }
 
 .form {
@@ -46,7 +66,7 @@ body {
   background: #ffffff;
   border: 1px solid #e5e9eb;
   border-radius: 6px;
-  width: 320px;
+  width: 345px;
   height: 40px;
   box-shadow: 0 0 3px black;
 }
@@ -61,6 +81,12 @@ body {
 
 .todosList {
   margin-bottom: 11px;
+  overflow-y: auto;
+  max-height: 290px;
+}
+
+.todosList::-webkit-scrollbar {
+  width: 0;
 }
 
 .todo {
@@ -68,7 +94,8 @@ body {
   align-items: center;
   gap: 10px;
   padding: 0 24px;
-  width: 392px;
+  // width: 392px;
+  width: 100%;
   height: 48px;
   background: #ffffff;
   border-radius: 8px;
@@ -84,9 +111,35 @@ body {
 }
 
 .edit {
+
+  i {
+    cursor: pointer; 
+    color: var(--skin-color);
+   }
+
+   i:hover {
+    font-size: 25px !important;
+   }
+
+   i:active {
+    font-size: 20px !important;
+   }
 }
 
 .delete {
+
+  i {
+    cursor: pointer; 
+    color: var(--skin-color);
+   }
+
+   i:hover {
+    font-size: 25px !important;
+   }
+
+   i:active {
+    font-size: 20px !important;
+   }
 }
 
 .bx-trash {
@@ -98,7 +151,11 @@ body {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.006em;
-  color: #0e73f6;
+  color: var(--skin-color);
   width: max-content;
   margin: 0 auto;
+  border: 1px solid #4094f7;
+  border-radius: 10px;
+  padding: 3px 10px;
+  background: white;
 }
