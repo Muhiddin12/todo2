@@ -201,8 +201,9 @@ h6 {
   height: 83%;
   gap: 8px;
   display: flex;
-  margin: 8px 2px 10px;
+  margin: 2px 2px 6px;
   transition: all 1s ease;
+  display: none;
 }
 
 .colors div {
@@ -227,10 +228,6 @@ h6 {
   border-radius: 50%;
   cursor: pointer;
   border: 1px solid white;
-}
-
-.color-1 {
-  background-color: #af38eb;
 }
 
 .color-2 {
@@ -266,7 +263,7 @@ h6 {
   margin: 0 1% 0 0;
   width: 100%;
   transition: all 0.3s ease;
-  transform: translateY(-5.6%);
+  transform: translateY(-5px);
 }
 
 body div {
@@ -279,7 +276,7 @@ body div {
 }
 
 .container {
-  width: 456px;
+  width: 496px;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
@@ -289,8 +286,6 @@ body div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
 
 .title {
@@ -300,13 +295,13 @@ body div {
   font-size: 46px;
   line-height: 68px;
   color: var(--skin-color);
-  margin-bottom: 34px;
+  margin-bottom: 18px;
 }
 
 .block {
   background: var(--skin-color);
   border-radius: 12px;
-  padding: 18px;
+  padding: 18px 18px 8px;
 }
 
 .form {
@@ -333,10 +328,28 @@ body div {
   color: white;
 }
 
+.filter {
+  margin: 10px 0;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 4px;
+  color: white;
+}
+
+.label {
+  margin-right: 10px;
+}
+
+.select {
+  border-radius: 3px;
+  padding: 3px;
+  width: 100px;
+}
+
 .todosList {
   margin-bottom: 11px;
   overflow-y: auto;
-  max-height: 290px;
+  max-height: 335px;
 }
 
 .todosList::-webkit-scrollbar {
@@ -360,6 +373,42 @@ body div {
 
 .todo_input {
   flex-grow: 1;
+  color: black;
+  background: none;
+}
+
+.chek {
+  text-decoration: line-through;
+}
+
+.save {
+  display: none;
+}
+.save i {
+  color: var(--skin-color);
+  cursor: pointer;
+}
+.save i:hover {
+  font-size: 26px !important;
+}
+.save i:active {
+  font-size: 22px !important;
+}
+
+.cencel {
+  display: none;
+}
+.cencel i {
+  color: var(--skin-color);
+  cursor: pointer;
+  font-size: 28px !important;
+}
+.cencel i:hover {
+  font-size: 31px !important;
+  font-weight: bold;
+}
+.cencel i:active {
+  font-size: 22px !important;
 }
 
 .edit i {
@@ -370,9 +419,12 @@ body div {
   font-size: 25px !important;
 }
 .edit i:active {
-  font-size: 20px !important;
+  font-size: 22px !important;
 }
 
+.delete {
+  display: block;
+}
 .delete i {
   cursor: pointer;
   color: var(--skin-color);
@@ -381,7 +433,7 @@ body div {
   font-size: 25px !important;
 }
 .delete i:active {
-  font-size: 20px !important;
+  font-size: 22px !important;
 }
 
 .clear {
