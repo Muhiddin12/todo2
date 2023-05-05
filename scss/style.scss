@@ -13,7 +13,7 @@ body {
 .wrapper {
   height: 100vh;
   // background: #32cac3;
-  background: rgb(243, 163, 176);
+  background: #b0b5b9;
 }
 
 .container {
@@ -57,6 +57,7 @@ body {
   padding: 22px 22px 12px;
   box-shadow: 0 0 16px rgb(36, 35, 35);
   width: 600px;
+  min-height: 400px;
 
   @media (max-width: 630px) {
     width: 370px;
@@ -76,8 +77,8 @@ body {
   background: black;
   // border: 1px solid #e5e9eb;
   border-radius: 18px;
-  // width: 445px;
-  width: 80%;
+  width: 445px;
+  // width: 80%;
   height: 45px;
   color: gold;
 
@@ -217,6 +218,11 @@ body {
   letter-spacing: 1px;
   background: none;
   width: 75%;
+  // width: 354px;
+
+  // @media (max-width: 630px) {
+  //   width: 154px;
+  // }
 }
 
 .check {
@@ -368,6 +374,15 @@ body {
 //     color: rgb(185, 160, 14);
 //   }
 // }
+
+.empty {
+  display: none;
+  color: gold;
+  font-size: 40px;
+  align-items: center;
+  text-align: center;
+  margin: 100px 0;
+}
 
 .clear {
   cursor: pointer;

@@ -3,7 +3,7 @@ const list = document.querySelector(".todosList");
 const clear = document.querySelector(".clear");
 const input = document.querySelector(".input");
 const select = document.querySelector(".select");
-
+const empty = document.querySelector(".empty");
 
 // STATE
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -163,6 +163,7 @@ block.addEventListener("click", (e) => {
   if (e.target.closest(".clear")) {
     todos = [];
     render();
+    empty.style.display = "block";
   };
 
   // onCheck button 
@@ -202,8 +203,8 @@ function inputHasNull4() {
 // click submit then create lists        
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const findTodo = todos.find((el) => el.value == event.target['todo'].value  );
+  empty.style.display = "none";
+  const findTodo = todos.find((el) => el.value == event.target['todo'].value);
 
   if (findTodo) {
     inputHasNull();

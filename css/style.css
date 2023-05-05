@@ -260,7 +260,7 @@ body div {
 
 .wrapper {
   height: 100vh;
-  background: rgb(243, 163, 176);
+  background: #b0b5b9;
 }
 
 .container {
@@ -290,6 +290,7 @@ body div {
   padding: 22px 22px 12px;
   box-shadow: 0 0 16px rgb(36, 35, 35);
   width: 600px;
+  min-height: 400px;
 }
 @media (max-width: 630px) {
   .block {
@@ -309,7 +310,7 @@ body div {
   letter-spacing: 1px;
   background: black;
   border-radius: 18px;
-  width: 80%;
+  width: 445px;
   height: 45px;
   color: gold;
 }
@@ -561,6 +562,15 @@ body div {
 }
 .delete:active i {
   color: black;
+}
+
+.empty {
+  display: none;
+  color: gold;
+  font-size: 40px;
+  align-items: center;
+  text-align: center;
+  margin: 100px 0;
 }
 
 .clear {
