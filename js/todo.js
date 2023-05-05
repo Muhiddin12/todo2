@@ -34,24 +34,28 @@ const render = () => {
 
     list.innerHTML += `
       <li class="todo" id="${element.id}" draggable="true">
-        <div class="step">
+        <div class="number ${checkbox == true ? 'liCheck' : ''}">
           <p>${index + 1}</p>
         </div>  
-        <input class="checking" ${checkbox == true ? "checked" : ""} type="radio" />
-        <input value="${element.value}" ${edit == false ? "disabled" : ""} class='todo_input ${checkbox == true ? 'check' : ''}' type="text" />
-        <div class="save">
-          <i class="bx bx-sm bxs-save"></i>
-        </div>
-        <div class="cencel">
-          <i class="bx bx-sm bx-x"></i>
-        </div>
-        ${checkbox == true ? "" :  `<div class="edit">
-                                      <i class="bx bx-sm bxs-pencil"></i>
-                                    </div>`
-          }
-        <div class="delete">
-          <i class="bx bx-sm bx-trash"></i>
-        </div>
+        <div class="info ${checkbox == true ? 'liCheck' : ''}">
+          <div class="checking">
+            <i class='bx bx-check ${checkbox == false ? "chekList" : ""}'></i>
+          </div>
+          <input value="${element.value}" ${edit == false ? "disabled" : ""} class='todo_input ${checkbox == true ? 'check' : ''}' type="text" />
+          <div class="save">
+            <i class="bx bx-sm bxs-save"></i>
+          </div>
+          <div class="cencel">
+            <i class="bx bx-sm bx-x"></i>
+          </div>
+          ${checkbox == true ? "" :  `<div class="edit">
+                                        <i class="bx bx-sm bxs-pencil"></i>
+                                      </div>`
+            }
+          <div class="delete">
+            <i class="bx bx-sm bx-trash"></i>
+          </div>
+        </div>  
       </li>`;
   });
 
@@ -97,14 +101,15 @@ const block = document.querySelector(".block");
 block.addEventListener("click", (e) => {
   const id = e.target.closest(".todo")?.id;
   
-    const getButton = (id, className) => 
-    document.querySelector(`#${id} .${className}`);
+  const getButton = (id, className) => 
+  document.querySelector(`#${id} .${className}`);
 
   const saveButton = getButton(id, "save");
   const cencelButton = getButton(id, "cencel");
   const editButton = getButton(id, "edit");
   const trashButton = getButton(id, "delete");
   const onDisabled = getButton(id, "todo_input")
+  const info = getButton(id, "info");
 
   // Edit button
     if (e.target.closest(".edit")) {
@@ -112,7 +117,8 @@ block.addEventListener("click", (e) => {
       cencelButton.style.display = "block";
       editButton.style.display = "none";
       trashButton.style.display = "none";
-      onDisabled.removeAttribute("disabled");   
+      onDisabled.removeAttribute("disabled");  
+      info.style.boxShadow = "0 0 8px gold";
 
       let currentValue = onDisabled.value;
       onDisabled.value = "";
@@ -129,19 +135,9 @@ block.addEventListener("click", (e) => {
   // save button 
   if (e.target.closest(".save")) {
     const currentClass = document.querySelector(`#${id} .todo_input`);
-    const firstIndex = todos.findIndex((el) => el.value == currentClass.value);
-
-    const currentId = document.querySelector(`#${id}`);
-    const secondIndex = todos.findIndex((el) => el.id == currentId.id);
-    
-    // const filter = todos.filter((el) => el.value == current.value);
-
-    // console.log(elIndex);
 
     if (currentClass.value == "") {
-      alert("Xato");
-    } else if (secondIndex !== firstIndex) { 
-      alert("Bunday matn avval kiritilgan !");
+      alert("Xato !");
     } else {
       todos = todos.map((v) => (v.id == id ? {...v, value: currentClass.value} : v));
       saveButton.style.display = "none";
@@ -203,31 +199,15 @@ function inputHasNull4() {
 }
 
 
-// click submit then create lists                   ASL
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-
-//   if (event.target["todo"].value == "") {
-//     inputHasNull();
-//     console.log("error");
-//   } else {
-//     const inputValue = event.target["todo"].value;
-//     const newTodo = {value: inputValue, id: "a" + Date.now(), isDone: false, edit: false};
-//     todos.unshift(newTodo);
-//     event.target["todo"].value = null;
-//     render();
-//   }
-// });
-
-
+// click submit then create lists        
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // console.log(todos.forEach((el) => {console.log(el.value)}));
-const findTodo = todos.find((el) => el.value == event.target['todo'].value  );
+  const findTodo = todos.find((el) => el.value == event.target['todo'].value  );
+
   if (findTodo) {
     inputHasNull();
-    alert('bunaqa todo bor')
+    alert('Bunday matn kiritilgan !')
   } else {
     if (event.target["todo"].value == "") {
       inputHasNull();
